@@ -20,6 +20,7 @@ spec:
               value: jdbc:postgresql://mouse.db.elephantsql.com:5432/mrzzpmtw
             - name: KUMULUZEE_DATASOURCES0_USERNAME
               value: mrzzpmtw
+            - name: KUMULUZEE_DATASOURCES0_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: pg-pass-kosarice
