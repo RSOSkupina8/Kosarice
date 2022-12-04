@@ -9,7 +9,7 @@ public class KosaricaConverter {
 
         Kosarica dto = new Kosarica();
         dto.setKosaricaId(entity.getId());
-
+        dto.setVsebina(entity.getVsebina());
         return dto;
 
     }
