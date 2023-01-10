@@ -26,7 +26,7 @@ spec:
                   name: pg-pass-kosarice
                   key: KUMULUZEE_DATASOURCES0_PASSWORD
           ports:
-            - containerPort: 8080
+            - containerPort: 8081
               name: server
               protocol: TCP
           livenessProbe:
@@ -51,7 +51,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 8080
+    - port: 8081
       protocol: TCP
       targetPort: server
   selector:

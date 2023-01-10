@@ -1,18 +1,16 @@
 package si.fri.rso.samples.kosarice.lib;
 
-import java.time.Instant;
-
 public class Kosarica {
 
     private Integer kosaricaId;
-    private String vsebina;
+    private Float cena;
 
-    public String getVsebina() {
-        return vsebina;
+    public Float getCena() {
+        return cena;
     }
 
-    public void setVsebina(String vsebina) {
-        this.vsebina = vsebina;
+    public void setCena(Float cena) {
+        this.cena = cena;
     }
 
 

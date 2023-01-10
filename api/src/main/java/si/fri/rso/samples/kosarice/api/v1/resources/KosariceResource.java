@@ -1,5 +1,6 @@
 package si.fri.rso.samples.kosarice.api.v1.resources;
 
+import com.kumuluz.ee.cors.annotations.CrossOrigin;
 import com.kumuluz.ee.logs.cdi.Log;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
@@ -31,6 +32,7 @@ import java.util.logging.Logger;
 @Path("/kosarice")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@CrossOrigin
 public class KosariceResource {
 
     private Logger log = Logger.getLogger(KosariceResource.class.getName());
@@ -95,7 +97,7 @@ public class KosariceResource {
             required = true, content = @Content(
             schema = @Schema(implementation = Kosarica.class))) Kosarica kosarica) {
 
-        if (kosarica.getVsebina() == null) {
+        if (kosarica.getCena() == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
         else {
@@ -147,7 +149,7 @@ public class KosariceResource {
     })
     @DELETE
     @Path("{kosaricaId}")
-    public Response deleteKosarica(@Parameter(description = "Metadata ID.", required = true)
+    public Response deleteKosarica(@Parameter(description = "Kosarica ID.", required = true)
                                         @PathParam("kosaricaId") Integer kosaricaId){
 
         boolean deleted = kosaricaBean.deleteKosarica(kosaricaId);

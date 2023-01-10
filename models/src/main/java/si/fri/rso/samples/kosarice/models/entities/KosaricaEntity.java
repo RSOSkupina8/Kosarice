@@ -1,7 +1,6 @@
 package si.fri.rso.samples.kosarice.models.entities;
 
 import javax.persistence.*;
-import java.time.Instant;
 
 @Entity
 @Table(name = "kosarice")
@@ -16,8 +15,8 @@ public class KosaricaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "vsebina")
-    private String vsebina;
+    @Column(name = "cena")
+    private Float cena;
 
 
     public Integer getId() {
@@ -28,12 +27,12 @@ public class KosaricaEntity {
         this.id = id;
     }
 
-    public String getVsebina() {
-        return vsebina;
+    public Float getCena() {
+        return cena;
     }
 
-    public void setVsebina(String vsebina) {
-        this.vsebina = vsebina;
+    public void setCena(Float cena) {
+        this.cena = cena;
     }
 
 }

@@ -3,7 +3,7 @@
 ## Prerequisites
 
 ```bash
-docker run -d --name pg-kosarice -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=kosarice -p 5432:5432 postgres:13
+docker run -d --name pg-kosarice -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=kosarice -p 5433:5432 postgres:13
 ```
 
 ## Build and run commands
@@ -33,9 +33,9 @@ docker ps
 docker network ls  
 docker network rm rso
 docker network create rso
-docker run -d --name pg-kosarice -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=kosarice -p 5432:5432 --network rso postgres:13
+docker run -d --name pg-kosarice -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=kosarice -p 5433:5432 --network rso postgres:13
 docker inspect pg-kosarice
-docker run -p 8080:8080 --network rso -e KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://pg-kosarice:5432/kosarice gregorzadnik/kosarice
+docker run -p 8081:8080 --network rso -e KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://pg-kosarice:5433/kosarice gregorzadnik/kosarice
 ```
 
 ## Consul

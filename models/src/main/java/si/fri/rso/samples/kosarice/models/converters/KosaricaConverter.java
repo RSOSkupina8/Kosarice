@@ -9,7 +9,7 @@ public class KosaricaConverter {
 
         Kosarica dto = new Kosarica();
         dto.setKosaricaId(entity.getId());
-        dto.setVsebina(entity.getVsebina());
+        dto.setCena(entity.getCena());
         return dto;
 
     }
@@ -17,7 +17,7 @@ public class KosaricaConverter {
     public static KosaricaEntity toEntity(Kosarica dto) {
 
         KosaricaEntity entity = new KosaricaEntity();
-        entity.setVsebina(dto.getVsebina());
+        entity.setCena(dto.getCena());
 
         return entity;
 
