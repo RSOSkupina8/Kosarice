@@ -31,8 +31,8 @@ import java.util.logging.Logger;
 @ApplicationScoped
 @Path("/kosarice")
 @Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
-@CrossOrigin
+@Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
+@CrossOrigin(supportedMethods = "GET, POST, PUT, DELETE, HEAD, OPTIONS")
 public class KosariceResource {
 
     private Logger log = Logger.getLogger(KosariceResource.class.getName());
